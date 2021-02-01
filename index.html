@@ -13,486 +13,72 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel=stylesheet href=css/style.min.css>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://use.typekit.net/zuw8lku.css">
+    <link rel=stylesheet href=css/style.min.css>
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>Fossil Free Cornell</title>
+    <title>Sunrise Movement Ithaca</title>
   </head>
 
   <body>
-    <div class="modal fade" id="share_modal" role="dialog">
-      <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Share the Divestment Campaign</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <div class="modal-body text-center">
-            <div class="row">
-              <p>
-                Share the divestment campaign with your friends!
-                The more people we have on board,
-                the faster we can convince the Board of Trustees to divest.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col">
-                <a data-toggle="tooltip" title="eMail Page" href="mailto:?subject=Fossil Free Cornell&body=Cornell has $400M invested in the fossil fuel industry. Let's change that. https://fossilfreecornell.com" class="btn">
-                  <img src="fonts/mail.svg" alt="eMail"></a>
-              </div>
-              <div class="col">
-                <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.facebook.com%2Fclimatejusticecornell%2F&layout=box_count&size=large&width=77&height=58&appId" width="77" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-              </div>
-              <div class="col">
-                <a data-toggle="tooltip" title="Text Page" href="sms:&body=Cornell has $400M invested in the fossil fuel industry. Let's change that. https://fossilfreecornell.com" class="btn">
-                  <img src="fonts/text.svg" alt="Text"></a>
-              </div>
-             </div>
-             <div class="row">
-               <div class="col-8">
-                 <input id="url" value="fossilfreecornell.com" readonly="read" class="form-control">
-               </div>
-               <div class="col-4">
-                 <a id="copy-btn" onclick="copy()" class="btn" data-toggle="tooltip" title="Copy URL">
-                   <img id="copy-img" src="fonts/clipboard.svg"></a>
-               </div>
-             </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!--
-      <div class="container-fluid" id="alert">
-        <div class="row">
-          <div class="col text-center"><h3>
-            <a href="https://www.facebook.com/pg/climatejusticecornell/events">
-              Next Action is Feb. 13th: Fossil Fuel Divestment Day
-            </a>
-          </h3></div>
-        </div>
-      </div>
-    -->
-
-    <div class="container-fluid topic" id=intro>
+    <!-- Full Page Landing Area -->
+    <!-- Contains Logo, Title, Social Links, & Brief About Sections -->
+    <div class="container-fluid landing">
       <div class="row text-center">
-        <div class="col">
-          <h1 class="display-1 mx-auto">
-              <b>CORNELL:</b>
-            </br>
-              STOP FUNDING THE
-              CLIMATE CRISIS.
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          <h2 class="display-2">
-            <!-- TODO: Create footnotes -->
-            Cornell has ~$400,000,000 invested in the fossil fuel industry.
-            We're changing that.
-          </h2>
-        </div>
-      </div>
-      <div id="fern"></div>
-      <div id="rig"></div>
-      <div id="rex"></div>
-    </div>
+        <div class=col-md>
+          <div class="row" id=title>
+            <h1 class="mx-auto">
+              SUNRISE ITHACA
+            </h1>
+          </div>
 
-    <div class="container-fluid" id="links">
-      <div class="row row-cols-2 row-cols-md-4">
-        <a href="" data-toggle="modal" data-target="#share_modal"><div class="col text-center"><h3>Share</h3></div></a>
-        <a href="#action"><div class="col text-center"><h3>Act</h3></div></a>
-        <a href="#about"><div class="col text-center"><h3>Learn</h3></div></a>
-        <a href="https://www.climatejusticecornell.org/" target="_blank"><div class="col text-center"><h3>CJC</h3></div></a>
-      </div>
-    </div>
+          <div class=row id=logo>
+            <img class=mx-auto alt="Sunrise Logo" src=fonts/sunrise-primary-yellow.svg>
+          </div>
+        </div>
 
-    <!-- TODO: Automatically update without uploading new file -->
-    <div class="container-fluid, topic" id=stats>
-      <div class="col">
-        <h4>Our movement is <b id="petition_count">2000</b> strong. <a href="https://actionnetwork.org/petitions/cornell-divest-from-fossil-fuels">Add your name!</a></h4><br/>
-        <div class="progress">
-          <div class="progress-bar bg-success" id="pb-student" role="progressbar" style="width:60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-bar bg-danger" id="pb-faculty" role="progressbar" style="width:1.2%" aria-valuenow="1.2" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-bar bg-info" id="pb-staff" role="progressbar" style="width:2.4%" aria-valuenow="2.4" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-bar bg-warning" id="pb-alumn" role="progressbar" style="width:4%" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div>
-          <div class="progress-bar" id="pb-community" role="progressbar" style="width:18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <h6><span>0</span><span class="float-right">2500</span></h6>
-      </div>
-    </div>
+        <div class="col-md">
 
-    <div class="container-fluid, topic" id="about">
-      <div class="row mb-4">
-        <div class=col>
-          <h2>About Divestment
-            <hr>
-          </h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg text-center">
-          <h4>The Story</h4>
-          <h5 class="d-sm-none">
-            Cornell has invested millions of dollars in fossil fuels,
-            meaning that the university benefits from the destruction wrought by fossil fuel companies.
-          </h5>
-          <a href="#about_story" data-toggle="collapse" class="mx-auto d-sm-none" id="about_story_link">- Show Full Text -</a>
-          <div class="collapse text-left" id="about_story">
-            <p>
-              &emsp;&emsp;Cornell has invested millions of dollars in fossil fuels,
-              meaning that the university benefits from the destruction wrought by fossil fuel companies.
-              Cornell has refused to disclose exactly how much they have invested,
-              but considering that on average 4-6% of endowments are invested in
-              fossil fuels, we estimate that Cornell owns around $400 million.
-              <br>
-              &emsp;&emsp;In early 2016, all Cornell Assemblies passed a resolution
-              calling for the university to stop investing in this exploitative,
-              morally reprehensible industry. Unfortunately, it was struck down by
-              <a href="https://trustees.cornell.edu">the Board of Trustees</a>,
-              a group that controls the university's endowments, among other things.
-              As students, and therefore beneficiaries of the endowment,
-              we must demand that the Board of Trustees divest.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg text-center">
-          <h4>The Demand</h4>
-          <h5 class="d-sm-none">
-            We demand that Cornell commit to divestment from all fossil fuel
-            companies by February 13, 2020. We have exhausted all other options
-            and are acting out of urgency for the sake of our future and shared livelihoods.
-          </h5>
-          <a href="#about_demand" data-toggle="collapse" class="mx-auto d-sm-none" id="about_demand_link">- Show Full Text -</a>
-          <div class="collapse text-left" id="about_demand">
-            <p>
-              &emsp;&emsp;After years of inaction from our institution, we demand that Cornell
-              commit to divestment from all fossil fuel companies by February 13, 2020:
-              <a href="https://www.facebook.com/events/2158186504240641/">National Fossil Fuel Divestment Day</a>.
-              Given the upcoming trustee meeting on February 1, 2020, there is still
-              time and opportunity for this decision to be made.
-              If this demand is not met, we are committed to disrupting business as usual
-              on the Cornell Ithaca campus until the Board of Trustees pledges to divest.
-              <br>
-              &emsp;&emsp;We are choosing confrontation after fruitless attempts of working with the
-              administration and a failed vote by the Board of Trustees. We have exhausted all other
-              options––we are acting out of urgency for the sake of our future and shared livelihoods.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg text-center">
-          <h4>What is Divestment?</h4>
-          <h5 class="d-sm-none ">
-            Divestment is the opposite of an investment. It simply means
-            selling unethical stocks and other investments and, generally,
-            replacing them with better alternatives.
-          </h5>
-          <a href="#about_divest" data-toggle="collapse" class="mx-auto d-sm-none" id="about_divest_link">- Show Full Text -</a>
-          <div class="collapse text-left" id="about_divest">
-            <p>
-              &emsp;&emsp;Divestment is the opposite of an investment. It simply means
-              selling unethical stocks and other investments and, generally,
-              replacing them with better alternatives. Fossil fuel investments are
-              not only risky for investors, they support industries whos immoral
-              actions directly contribute to climate change and pollution.
-              <br>
-              &emsp;&emsp;The actual process of divestment is very gradual,
-              and there are many different models for completing it.
-              Done properly, it does not pose a financial risk to Cornell.
-              <br>
-              &emsp;&emsp;Despite claiming to be "the greenest Ivy", Cornell continues
-              to be complacent in its contribution to climate change. It has fallen
-              behind <a href="https://gofossilfree.org/divestment/commitments/">many other schools</a>,
-              such as the University of California system, which have already committed
-              to divestment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid, topic" id="missive">
-      <div class=row>
-        <div class="col">
-          <h2>Our Ultimatum
-            <hr>
-          </h2>
-        </div>
-      </div>
-      <!-- This div for small displays -->
-      <div class="row text-center">
-        <h5 class="d-sm-none">
-          Climate Justice Cornell and our fellow students,
-          demand that Cornell commit to divestment from all fossil fuel
-          companies by February 13, 2020: National Fossil Fuel Divestment Day.
-        </h5>
-        <a href="#letter" data-toggle="collapse" class="mx-auto d-sm-none" id="letter_link">- Show Full Letter -</a>
-        <div class="collapse text-left" id="letter">
-          <p>
-            Dear President Martha Pollack and Board of Trustees,
-            <br><br>
-            &emsp;&emsp;&emsp;&emsp;
-            Today, December 6, we demand change.
-            Our actions here on campus are a part of a wider, global movement;
-            as millions around the world are demanding meaningful change from our systems and institutions, we are calling on Cornell to end its hypocrisy, to end putting profit over people the world over, including its own students.
-            After years of inaction from our institution,
-            <b>
-              Climate Justice Cornell and our fellow students, demand that Cornell commit to divestment from all fossil fuel companies by February 13, 2020:
-            </b>
-            national Fossil Fuel Divestment Day.
-            The next Board of Trustees meeting is February 1, 2020, but regardless, there has been and there still is ample time for this decision to be made.
-            If this demand is not met, we are committed to disrupting business as usual on the Cornell Ithaca campus until the Board of Trustees pledges to divest.
-            We are choosing confrontation after fruitless attempts of working with the administration and a failed vote by the Board of Trustees.
-            We have exhausted all other options –– we are acting out of urgency for the sake of our future and shared livelihoods.
-            <br><br>
-            <span class="float-right">
-              Sincerely,</br>
-              Climate Justice Cornell
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid, topic" id="action">
-      <div class=row>
-        <div class=col>
-          <h2>Take Action
-            <hr>
-          </h2>
-        </div>
-      </div>
-      <br>
-      <div class="row" id="action-area">
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <div class="col">
-                  <h4>Connect</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm">
-                  <a href="https://wordpress.us15.list-manage.com/track/click?u=f46edef1cc38b30c3091a64fd&id=7ca86f529b&e=85f0252ea4"
-                  class="btn"><img src="fonts/mail.svg" alt="Mail"></a>
-                </div>
-                <div class="col-sm">
-                  <a href="https://www.facebook.com/climatejusticecornell/"
-                     class="btn"><img alt=Facebook src=fonts/facebook.svg></a>
-                </div>
-                <div class="col-sm">
-                  <a href="https://www.instagram.com/climate_justice_cornell/"
-                     class="btn"><img alt=Instagram src=fonts/instagram.svg></a></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <div class="col">
-                  <h4>Protest</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md">
-                  <p>
-                    We use frequent rallies and
-                    <a href="https://en.wikipedia.org/wiki/Direct_action">non-violent direct action</a>
-                    to pressure university administration.
-                    By doing so, we show that we, the campus community, are standing up
-                    for our planet and our future.
-                    <br><br>
-                    To participate, you just need to show up.
-                    Upcoming events and details are posted to
-                    our <a href="https://www.facebook.com/climatejusticecornell/">Facebook page</a>.
-                    You can also get updates about events by joining our
-                    <a href="https://wordpress.us15.list-manage.com/track/click?u=f46edef1cc38b30c3091a64fd&id=7ca86f529b&e=85f0252ea4">email list</a>.
-                  </p>
-                </div>
-                <div class="col-md text-center">
-                  <br>
-                  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fclimatejusticecornell%2F&tabs=events%2C%20timeline&width=250&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="250" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h4>Organize</h4>
-              <p>
-                Climate Justice Cornell and the divestment campaign are run by students.
-                We have a horizontal power structure, and welcome anyone interested in
-                organizing at any commitment level. We encourage you to contribute to
-                an upcoming action or spearhead something of your own.
-                <br><br>
-                Meetings are a great starting point to get involved and they're also fun!
-                <i>Time & place as of Spring 2020 semester:</i>
-                <br>
-                G-Body (general meeting): Tuesdays at 5:30PM, 107 Morrill Hall<br>
-                Divestment Strategy: TBA<br>
-                Treeboard (g-body planning): TBA<br>
-                <br>
-                <a href="https://join.slack.com/t/cjc2018-19/shared_invite/enQtOTE4NjMyNjI2NzEwLThiNzhlMzgwMDdmNzA0YTVkMzMyYzBjMzVhYWUwNWFmNDlkODA3N2JmMzg3MjMzNThjYTcyMTY5NzVhZDA0Yzk">Fill out this form</a>
-                to join Slack, which we use for most digital communication. You can also
-                <a href="https://wordpress.us15.list-manage.com/subscribe?u=f46edef1cc38b30c3091a64fd&id=8651eead51">join the mailing list</a>
-                for general updates.
-              </p>
-            </div>
-          </div>
-          <div class="row">
+          <div class="row justify-content-md-center" id=social>
+            <div class="col-sm"></div>
+            <div class="col-sm"><a href="https://www.facebook.com/sunriseithaca/" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a></div>
+            <div class="col-sm"><a href="https://www.instagram.com/sunrise.ithaca/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a></div>
+            <div class="col-sm"><a href="https://twitter.com/IthacaSunrise" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a></div>
             <div class="col-sm">
-              <a href="#contact" onclick="return alert('Please contact us directly to donate.');" class="btn">
-                <h4>Donate</h4>
-              </a>
+              <img src=fonts/slack-tag.svg alt="Join the Slack!">
+              <a href="https://join.slack.com/t/sunriseithaca/shared_invite/zt-dd3687c5-LGHyAinddV4rm4zpcRsrIQ" target="_blank" rel="noopener noreferrer"><i class="bi bi-slack"></i></a>
             </div>
+
+            <div class="col-sm"></div>
           </div>
-          <div class="row">
-            <div class="col">
-              <img class="d-none d-lg-block mx-auto" src="img/march.png" alt="">
-            </div>
-            <div class="col">
-              <img class="d-none d-lg-block mx-auto" src="img/card.png" alt="">
-            </div>
-            <div class="col">
-              <img class="d-none d-lg-block mx-auto" src="img/yell.png" alt="">
-            </div>
+
+          <div class="row" id=about>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium eros eu turpis lobortis finibus.
+              Vestibulum a ipsum magna. In mi neque, sodales sit amet felis in, finibus porttitor ex.
+              Phasellus scelerisque eu ex et ornare. Cras mi enim, pellentesque sed semper a, egestas tincidunt enim.
+              Nulla faucibus tortor a urna luctus, eget vulputate sem porta. Donec et iaculis tellus. Donec a libero velit.
+              <br><br>
+              Vivamus bibendum metus nisi, at viverra risus fringilla a.
+              Sed luctus, ligula non malesuada pharetra, lectus lorem mattis sapien, nec finibus augue magna ut libero.
+              Proin maximus eros mi, in posuere lorem pulvinar a.
+              Aliquam tincidunt lectus sit amet erat dapibus, non tristique nulla gravida.
+              Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Sed non justo lacus. Duis in sapien posuere, mollis justo eget, egestas velit.
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam ultricies, nisl.
+            </p>
           </div>
-        </div>
-        <div class="col-lg-4 text-center">
-          <h4>Sign the Petition</h4>
-          <br>
-          <link href='https://actionnetwork.org/css/style-embed-v3.css' rel='stylesheet' type='text/css' />
-          <script src='https://actionnetwork.org/widgets/v3/petition/cornell-divest-from-fossil-fuels?format=js&source=widget'></script>
-          <div class="d-none d-md-block" id='can-petition-area-cornell-divest-from-fossil-fuels'>
-            <!-- this div is the target for our HTML insertion -->
-          </div>
-          <!-- Replaces form with button on small screens -->
-          <a href="https://actionnetwork.org/petitions/cornell-divest-from-fossil-fuels"
-             class="btn btn-lg d-md-none">Sign on Action Network</a>
+
         </div>
       </div>
     </div>
 
-    <!-- TODO: Allow Class Consciousness to update automatically -->
-    <div class="container-fluid, topic" id="news">
-      <div class=row>
-        <div class=col>
-          <h2>In the Press<hr></h2>
-        </div>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
-        <div class="card mx-auto">
-          <a href="#news"><img src=img/newspaper.jpg class=card-img-top></a>
-          <div class="card-header">
-            <a href="#news"><h5 class=card-title>Article 1</h5></a>
-            <h6 class="text-muted">The Cornell Daily Sun</h6>
-          </div>
-          <div class="card-body d-none d-sm-block">
-            <p class=card-text>Summary of article here.</p>
-          </div>
-        </div>
-        <div class="card mx-auto">
-          <a href="#news"><img src=img/newspaper.jpg class=card-img-top></a>
-          <div class="card-header">
-            <a href="#news"><h5 class=card-title>Article 2</h5></a>
-            <h6 class="text-muted">Class Consciousness</h6>
-          </div>
-          <div class="card-body d-none d-sm-block">
-            <p class=card-text>Summary of article here.  </p>
-          </div>
-        </div>
-        <div class="card mx-auto">
-          <a href="#news"><img src=img/newspaper.jpg class=card-img-top></a>
-          <div class="card-header">
-            <a href="#news"><h5 class=card-title>Article 3</h5></a>
-            <h6 class="text-muted">The New York Times</h6>
-          </div>
-          <div class="card-body d-none d-sm-block">
-            <p class=card-text>  Summary of article here.</p>
-          </div>
-        </div>
-        <div class="card mx-auto">
-          <a href="#news"><img src=img/newspaper.jpg class=card-img-top></a>
-          <div class="card-header">
-            <a href="#news"> <h5 class=card-title>Article 4</h5></a>
-            <h6 class="text-muted">350.org</h6>
-          </div>
-          <div class="card-body d-none d-sm-block">
-            <p class=card-text>Summary of article here.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container-fluid divider"></div>
 
-    <div class="container-fluid, topic" id=contact>
-      <div class=row>
-        <div class=col>
-          <h2>Get in Touch<hr></h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class=col-sm>
-          <p>
-            <br>
-            For details on upcoming protests and how to get involved visit the
-            <a href="https://www.facebook.com/climatejusticecornell/">Climate Justice Cornell Facebook page</a>.
-            <br><br>
-            For other requests including press and collaborations, feel free to email us.
-            Someone will respond when possible.
-            <br><br>
-            This form is processed with <a href="https://formspree.io/">Formspree</a> and will require you to complete a reCAPTCHA.
-          </p>
-        </div>
-        <div class=col-sm>
-          <form action=https://formspree.io/cjc.cornell@gmail.com class="form-group mt-5 text-center" method=post>
-            <input name=name class=form-control id=name placeholder=Name>
-            <br>
-            <input name=email type=email class=form-control id=mail placeholder=eMail>
-            <br>
-            <textarea class=form-control id=message name=message placeholder=Message></textarea>
-            <br>
-            <input name=_next type=hidden value=email.html>
-            <input name=_subject type=hidden value="Divestment Website Contact Form">
-            <input name=_gotcha style=display:none>
-            <br>
-            <button class="btn" type=submit>Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid" id=footer>
-      <div class=row>
-        <div class="col-xl text-center"></div>
-        <div class="col-xl text-center">
-          <a href="https://www.instagram.com/climate_justice_cornell/">
-            <img alt=Instagram src=fonts/instagram.svg></a>
-          <a href="https://www.facebook.com/climatejusticecornell/">
-            <img alt=Facebook src=fonts/facebook.svg></a>
-        </div>
-        <div class="col-xl text-center"></div>
-        <div class="col-xl text-center">
-          <h4>
-            <a href="https://www.climatejusticecornell.org/">
-              ©
-              <script>
-                document.write((new Date).getFullYear())
-              </script>
-              Climate Justice Cornell
-              <br>
-              Funded by SAFC
-            </a>
-          </h4>
-        </div>
-        <div class="col-xl text-center"></div>
-      </div>
+    <div class="container-fluid content">
+      Current Projects, Google Calendar Embed and Link to Add
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -504,9 +90,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/petition-counter.js"></script>
-    <script src="js/news-fetcher.js"></script>
 
     <!--Reset icons to prevent Daily Sun overwrite-->
     <link rel="icon" href="favicon.ico" sizes="32x32" />
